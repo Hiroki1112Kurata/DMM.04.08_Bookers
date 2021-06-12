@@ -4,9 +4,12 @@ class BooksController < ApplicationController
   end
   def create
     book = Book.new(book_params)
-    book.save
-    redirect_to books_path
-    # 仮設定　一覧ページへリダイレクト
+    if book.save
+      redirect_to books_path, notice: "Book was successfully created."
+      # 仮設定　一覧ページへリダイレクト
+    else
+      render action: :index
+    end
   end
   def index
     @books = Book.all
