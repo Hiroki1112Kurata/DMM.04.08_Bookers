@@ -12,10 +12,8 @@
   <%= @book.body %>
 </P>
 
-<p>
    <!--詳細ページへのリンク-->
-  <%= link_to "edit", edit_book_path(@book.id) %>
-  |
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+   |
   <!--一覧ページへのリンク-->
   <%= link_to "Back", books_path(@book) %>
-</p>
